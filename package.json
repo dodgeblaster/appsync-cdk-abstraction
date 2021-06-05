@@ -1,0 +1,22 @@
+{
+    "name": "rise-cdk",
+    "version": "0.1.0",
+    "scripts": {
+        "build": "tsc",
+        "watch": "tsc -w",
+        "cdk": "cdk"
+    },
+    "devDependencies": {
+        "@types/jest": "^26.0.10",
+        "@types/node": "10.17.27",
+        "aws-cdk": "1.106.1",
+        "ts-node": "^9.0.0",
+        "typescript": "~3.9.7"
+    },
+    "dependencies": {
+        "@aws-cdk/aws-appsync": "*",
+        "@aws-cdk/aws-dynamodb": "*",
+        "@aws-cdk/aws-iam": "*",
+        "@aws-cdk/core": "*"
+    }
+}
