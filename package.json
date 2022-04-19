@@ -16,7 +16,11 @@
     "dependencies": {
         "@aws-cdk/aws-appsync": "*",
         "@aws-cdk/aws-dynamodb": "*",
+        "@aws-cdk/aws-events": "^1.107.0",
         "@aws-cdk/aws-iam": "*",
+        "@aws-cdk/aws-lambda": "^1.107.0",
+        "@aws-cdk/aws-stepfunctions": "^1.107.0",
+        "@aws-cdk/aws-stepfunctions-tasks": "^1.107.0",
         "@aws-cdk/core": "*"
     }
 }

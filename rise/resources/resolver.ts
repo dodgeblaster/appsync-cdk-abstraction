@@ -40,10 +40,10 @@ export class RiseResolver extends cdk.Construct {
                   "version": "2017-02-28",
                   "operation" : "Query",
                     "query" : {
-                        "expression" : "PK = :PK AND begins_with(SK, :SK)",
+                        "expression" : "pk = :pk AND begins_with(sk, :sk)",
                         "expressionValues" : {
-                            ":PK" : $util.dynamodb.toDynamoDBJson(${pk}),
-                            ":SK" : $util.dynamodb.toDynamoDBJson("${sk}")
+                            ":pk" : $util.dynamodb.toDynamoDBJson(${pk}),
+                            ":sk" : $util.dynamodb.toDynamoDBJson("${sk}")
                         }
                     }
                 }`,
@@ -72,8 +72,8 @@ export class RiseResolver extends cdk.Construct {
                   "version": "2017-02-28",
                   "operation": "PutItem",
                   "key": {
-                    "PK": $util.dynamodb.toDynamoDBJson($ctx.args.input.PK),
-                    "SK": $util.dynamodb.toDynamoDBJson($ctx.args.input.SK)
+                    "pk": $util.dynamodb.toDynamoDBJson($ctx.args.input.pk),
+                    "sk": $util.dynamodb.toDynamoDBJson($ctx.args.input.sk)
                   },
                   "attributeValues": $util.dynamodb.toMapValuesJson($ctx.args.input)
                 }`,
@@ -102,8 +102,8 @@ export class RiseResolver extends cdk.Construct {
                   "version": "2017-02-28",
                   "operation": "DeleteItem",
                   "key": {
-                    "PK": $util.dynamodb.toDynamoDBJson($ctx.args.PK),
-                    "SK": $util.dynamodb.toDynamoDBJson($ctx.args.SK)
+                    "pk": $util.dynamodb.toDynamoDBJson($ctx.args.pk),
+                    "sk": $util.dynamodb.toDynamoDBJson($ctx.args.sk)
                   }
                 }`,
                 responseMappingTemplate: `$util.toJson($ctx.result)`

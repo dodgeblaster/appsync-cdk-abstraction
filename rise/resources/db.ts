@@ -7,11 +7,11 @@ export class RiseDb extends cdk.Construct {
         const table = new db.Table(this, 'main-db', {
             tableName: props.name,
             partitionKey: {
-                name: `PK`,
+                name: `pk`,
                 type: db.AttributeType.STRING
             },
             sortKey: {
-                name: 'SK',
+                name: 'sk',
                 type: db.AttributeType.STRING
             },
 
@@ -20,25 +20,25 @@ export class RiseDb extends cdk.Construct {
         })
 
         table.addGlobalSecondaryIndex({
-            indexName: 'GSI1',
+            indexName: 'gsi1',
             partitionKey: {
-                name: `GSI1`,
+                name: `gsi1`,
                 type: db.AttributeType.STRING
             },
             sortKey: {
-                name: 'SK',
+                name: 'sk',
                 type: db.AttributeType.STRING
             }
         })
 
         table.addGlobalSecondaryIndex({
-            indexName: 'GSI12',
+            indexName: 'gsi2',
             partitionKey: {
-                name: `GSI2`,
+                name: `gsi2`,
                 type: db.AttributeType.STRING
             },
             sortKey: {
-                name: 'SK',
+                name: 'sk',
                 type: db.AttributeType.STRING
             }
         })
